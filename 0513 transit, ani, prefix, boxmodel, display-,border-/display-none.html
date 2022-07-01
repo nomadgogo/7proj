@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {margin: 20px; border: 1px solid #ccc;
+        border-radius: 5px;}
+        img{width: 300px;}
+    .visible{
+        visibility: visible;
+    }
+    .none{display: none;}  /*공간도 사라짐*/
+
+    .hidden{visibility: hidden;}  /*공간은 존재하지만 안보임*/
+    </style>
+
+</head>
+<body>
+    
+    <div id="inline">
+        <img class="visible" src="./img/de1.jpg">
+        <img class="none" src="./img/de2.jpg">
+        <img class="visible" src="./img/de3.jpg">
+    </div>
+
+    <div id="block">
+        <img class="visible" src="./img/de1.jpg">
+        <img  class="hidden" src="./img/de2.jpg">
+        <img class="visible" src="./img/de3.jpg">
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+html{
+    font-family: "Open Sans", sans-serif;
+    /* background-image: url("./img5.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;  */
+    /*  background-position:  x-position y-position
+        : left, center ,right, % || top, center, bottom, % */
+    
+    background:  url("./img5.jpg") no-repeat   center center fixed; 
+    background-size: cover;
+}
+
+#content{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 글자 가운데 정렬 팁*/
+}
+
+h1{
+    color:#fff;
+    font-size: 8em; /*16px x 8*/
+    font-style: italic;
+    text-shadow: 2px 2px 3px #222, 2px 2px 3px #000; /* 글자 그림자 */
+    text-transform: uppercase; /* 자동으로 대문자로( 소문자 lowercase)*/
+}
+
+@media (max-width:700px){
+    html{
+        background:  url("./img4.jpg") no-repeat   center center fixed; 
+    background-size: cover;
+    }
+    h1{
+        font-size:4em;
+    }
+}

@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    /* color: #fff; */
+text-decoration: none;}
+
+.menu li a:before{
+    content: '★';
+}
+
+.menu li a:after{
+    content: '★';
+}
+
+/*마지막 속성 | 제거 */
+.menu li:last-child :after{content:"";}
+
+.menu li{
+    display: inline-block; /*메뉴 사이 공백 생김*/
+    float: left;
+    width: 150px;
+    /* height: 50px; */
+    /* background-color: blueviolet; */
+    text-align: center;
+    /* line-height: 50px; 높이가 중간이 됨(height가 50이니까) */
+    padding-top:15px;
+    padding-bottom: 15px;
+    /* border: 1px solid orange; */
+
+    border-top: 1px solid yellowgreen;
+    /* border-right: 1px solid red;
+    border-bottom: 1px solid red; */ 
+    /* border-left: 1px solid red; */
+}
+
+.munu li:nth-child(1){
+    border-left: 1px solid red;
+}
+
+.menu li:hover{
+    border-top: 1px solid red;
+    background-color: rgba(255,255,255,0.3);}
+
+.menu ul{
+    background-color: yellowgreen;
+    overflow: hidden ;
+}
+
+.menu li a{
+    display: block;
+}
+.menu li a:hover{color: red;}
+
+/* menu2에 대한 style */
+.lists li img {
+    border-radius: 20px;
+    margin-right: 10px;
+    /* margin-bottom: 20px; */
+}
+
+.lists li .info{
+    display: inline-block;
+}
+
+.lists li .info h3{
+  color:rgb(32, 25, 25);
+  font-size: 16px;
+  margin: 0;
+}
+
+.lists li .info span{
+    color:rgba(44, 41, 41, 0.46);
+    font-size: 14px;
+}
+
+.lists li img,
+.lists li .info{
+    vertical-align: middle;
+}
+
+/* li 전체에 링크걸기 */
+.lists li a{
+    display: block;
+}
+
+.lists li{margin-bottom: 20px}
+
+
+/* menu3 (news) -리빙 뉴스 */
+.living-lists li{
+    width:750px;
+    /* background-color: aquamarine; */
+}
+
+.living-lists .image-link,
+.living-lists .info-link{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.living-lists .info-link{
+    width:512px;
+}
+
+.living-lists .image-link {
+    margin-right:21px;
+}
+
+.living-lists .living-info h3{
+    margin:0;
+}
+.date-wrap span{
+    font-size:14px;
+}
+.living-info span{
+    color: #c08d31;
+}
+
+/* news */
+.title-wrap{
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    /* padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    padding-left: 15px; */
+    padding: 20px 20px 20px 15px;
+}
+
+.title-wrap h3{
+    /* background-color: green; */
+    margin-bottom:20px;
+
+}
+
+/*   https://flexbox.help/  */
+.title-wrap .btn-wrap{
+	display: flex;
+    justify-content: space-between;
+}

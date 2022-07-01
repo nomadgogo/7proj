@@ -1,0 +1,341 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+*{  /*  *선택: 로딩이 느릴 수 있음 세부적으로 지정하는게 나음 */
+    margin:0 auto; /* 중앙정렬 - 쓸려면 width가 지정되어 있어야 함 */
+    padding:0;
+    font-family: "Noto Sans KR", sans-serif;
+
+}
+ul, ol, li {list-style: none;}
+a {
+    /* color: #000;  */
+    text-decoration: none;}
+button {
+    cursor: pointer;}
+    
+header {
+    position: relative; 
+    border-top: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc;
+    width:100%;
+}
+header h1 {
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    padding: 0 0 0 26px;
+}
+header h1 a {
+    display: block; 
+    width: 99px; 
+    height: 69px; 
+    background: url("https://via.placeholder.com/99x69") no-repeat center;}
+    /* background: url("./images/logo.png") no-repeat center ;} */
+
+
+/* nav 메인 메뉴 영역  */
+header > nav > ul {
+    text-align: center; 
+    font-size: 0; /*자식인 li의 display:inline-block;이라 줄바꿈할 때 요소와 요소 사이 공백이 생긴다. 
+                    이를 완전히 없애기 위해 font-size:0으로 해주고 필요할 때 font-size를 다시 지정한다.*/
+    
+}
+header > nav > ul > li {
+    display: inline-block; 
+}
+header > nav > ul > li > a { /* > 사용하지 않으면 스타일 사속이 일어남 */
+    display: block;  /* 크기 가지기 위해서 */
+    padding: 0 47.5px;    
+    line-height: 69px; 
+    font-size: 18px; /*header nav ul에 font-size:0 */
+    color: #000;
+    position:relative; /*서브메뉴 위치 고정용 */
+    transition: color .3s .1s;
+}
+
+header > nav > ul > li > a:before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    background: #65767d;
+    height:0;
+    transition: height .3s;
+    z-index:-1; /*없으면 배경에 깔려서 글자 색 바뀌는게 적용 안 됨 */
+}
+
+header > nav > ul > li > a:hover {
+    /* background-color: aqua; */
+    color:#fff;
+}
+header > nav > ul > li:hover > a:before{
+    height:100%;
+}
+
+/* nav 서브 메뉴 영역  */
+.submenu{
+ 
+    position: absolute;
+    /* padding: 21px 0; 
+     min-width: 26px; */
+    /* background: #65767d;  */
+    /* display: none; */
+    /* line-height: 18px; */
+     height: 0;
+    overflow: hidden; }
+
+.submenu >li{
+    display: block;
+    
+}
+
+header > nav > ul > li:hover > .submenu{
+   height:155px; /*31px x 5 */
+    /* transition-duration: 1s;
+    z-index:3; */
+    position: absolute;
+    padding: 21px 29.5px; /*가로세로 패딩넣어서 커지게 하기*/
+    /* min-width: 26px; */
+    
+    background: #65767d;
+    
+}
+
+
+header> nav> ul> li:hover> .submenu a{    /*header nav ul li ul == .submenu*/
+    display: block;
+    padding:0 18px;
+    font-size:15px;
+    background: #65767d;  
+    /* color:#b2bbbe; */
+    line-height: 33px;
+    /* transition: color .3s; */
+    /* border:1px solid red; */
+    
+}
+.submenu a:focus,
+.submenu a:hover
+{
+    color:#fff;
+
+}
+/* util 메뉴  */
+header .util {
+    position: absolute; 
+    right: 0; 
+    top: 0;}
+
+header .util a {
+    display: inline-block; 
+    position: relative;
+     padding: 0 18px; 
+     line-height: 69px;      
+     font-size: 12px; 
+     color: #333; 
+     vertical-align: middle; /*inline, inline-block 형태 요소 행 배치시 요소 높이가 틀어지는 현상 잡기 위한 코드 
+        이 코드로 안 되면 px 단위로 세밀하게 조정해야 함
+        비교하여 보통 텍스트 세로 정렬을 위해서는 line-height를 사용한다.  */
+    }
+
+header .util a ~ a:before { /*~ : 형제 요소 선택 , a 앞에 다음 내용을 집어 넣는다. 
+                                만약 util 메뉴가 하나라면 바를 안 넣어야하기 때문에 형제 2개 이상일 때만 바 넣도록한다 */
+    content: ""; 
+    position: absolute;  /*before는 요소의 첫 번째 요소로 생성됨 배치를 위해 붙임 */
+    left: 0; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 1px; 
+    height: 9px; 
+    background: #ddd;}
+
+header .util button {
+    width: 60px; 
+    height: 69px; 
+    background: #043285; 
+    color:wheat;
+}
+section {
+    display: block; 
+    height: calc(100vh - 71px); 
+    background: #ccc; 
+    line-height: calc(100vh - 71px); 
+    text-align: center; 
+    font-size: 50px; 
+    color: #000; 
+    font-weight: bold;} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @charset "utf-8";
+
+*{
+    border: none;
+    margin:0;
+    padding:0;
+}
+
+ul, ol, li{
+    list-style: none;
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+button{
+    cursor:pointer;
+}
+
+header{
+    position: relative;
+    border-top:1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    height: 69px;
+}
+
+header h1{
+    position: absolute;
+    top:0;
+    left:0;
+    padding-left: 26px;
+}
+
+header h1 a{
+    display: block;
+    width: 99px;
+    height: 69px;
+    background: url("https://via.placeholder.com/99x69") no-repeat center;
+}
+
+header .util{
+    position: absolute;
+    right:0;
+    top: 0;
+}
+
+header .util a{
+    display: inline-block;
+
+}
+
+header .util a{
+    display: inline-block;
+    position: relative;
+    padding: 0 18px;
+    line-height: 69px;
+    font-size:18px;
+    color: #000;
+}
+
+header nav ul{
+    width: 1000px;
+    overflow: hidden;
+    text-align: center;
+    padding-left: 200px;
+}
+
+header nav ul li{
+    display: inline-block;
+    float: left;
+    width: 18%;
+}
+
+header nav ul li a{
+    display: block;
+    padding: 0 47.5px;
+    line-height: 69px;
+    font-size: 18px;
+    color:#000;
+}
+
+header .util a ~a:before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    transform:translateY(-50%);
+    width:1px;
+    height: 9px;
+    background-color: #ddd;
+}
+
+header .util button{
+    width:60px;
+    height: 69px;
+    background-color: #043285;
+    color: #fff;
+    margin-right: 26px;
+}
+
+.submenu li{
+    line-height: 50px;
+    background-color: #94a9ff;
+}
+
+.submenu{
+    height: 0;/*서브메뉴가 보이지 않도록 높이를 0으로 처리*/
+    overflow: hidden;
+}
+
+
+nav ul li:hover{
+    background-color: #94a9ff;
+    transition-duration: 0.5s;
+}
+
+nav ul li:hover .submenu{
+    height: 250px;
+    transition-duration: 1s;
+}
+section{
+    clear:both;
+    height: 500px;
+    margin-top: 30px;
+    text-align:center;
+    /* border: 1px solid red; */
+
+} */
